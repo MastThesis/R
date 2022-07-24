@@ -7,9 +7,9 @@
 #########################################################################
 # I) used functions
 
-source("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/LC_col_2.R")
-source("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/ANALYTIC.R")
-source("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/barplot_function.R")
+source("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/LC_col_2.R")
+source("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/ANALYTIC.R")
+source("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/barplot_function.R")
 
 #########################################################################
 #
@@ -18,7 +18,7 @@ source("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/barplot_function.R")
 #########################################################################
 # set directory of ESI data
 
-setwd("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/ESI tune")
+setwd("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/ESI tune")
 #  Outline (For a) capillary temperature, b) capillary voltage 
 #               c) gas flow and sheat gas d) heater e) spray voltage
 #               f) tube length  
@@ -47,7 +47,7 @@ max_time <- rep(8,7)
 ylim_max <- c(7e6,5e6,4.5e6,4e6,3.5e6,3.5e6,3.5e6)
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 5.53, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 5.53, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -71,7 +71,7 @@ legend <- c(expression("capillary T: "*150*degree*C),
             expression("capillary T: "*400*degree*C))
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 par(mfrow=c(1,1))
 par(mar=c(3.5,5,2,2))
@@ -100,7 +100,7 @@ name <- c(expression("capillary T: "*150*degree*C),
           expression("capillary T: "*400*degree*C))
 type <- ""
 ylim_max <- c(6e6,5e6,5e6,4e6,3.5e6,3.5e6,3e6)
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 5.53, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 5.53, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -118,7 +118,7 @@ par(mfrow=c(1,1))
 par(mar=c(3.5,7,2,2))
 
 for(i in 1:7){
-  pdf(paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
+  pdf(paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
       colormodel = "cmyk")  #, #paper = "a4r") 
   par(mar=c(3.5,6,2,2))
   EIC(file[i], time, name=name[i], type, ylim_max[i])
@@ -155,7 +155,7 @@ ylab=T
 linesT=c(F,T,T,T,T,T,T)
 
 lineColT=c("#72791C", "#1269B0", "#A8322D","#767171","#C55A11","#83136E","black")
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
     for(i in 1:7){
       par(mar=c(3.5,6,2,2))
       file = fileT[i]
@@ -180,7 +180,7 @@ for(i in 1:7){
   lineCol = "black"
   name=legend[i]
   ylim_max=ylim_maxT[i]
-  pdf(  paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
+  pdf(  paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
         width = 7.26, height = 4.26, bg = "white")       
   par(mar=c(3.5,6,2,2))
   par(mfrow=c(1,1))
@@ -202,7 +202,7 @@ data <- c("capT_150.xlsx",
            "capT_350.xlsx",
            "capT_380.xlsx",
            "capT_400.xlsx")
-directory <- setwd("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/ESI tune")
+directory <- setwd("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/ESI tune")
 
 
 name <- c(expression("T: "*150*degree*C),
@@ -212,7 +212,7 @@ name <- c(expression("T: "*150*degree*C),
             expression("T: "*350*degree*C),
             expression("T: "*380*degree*C),
             expression("T: "*400*degree*C))
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 
 EIC_barplot(main,data,type,directory,name)
 dev.off()
@@ -244,7 +244,7 @@ max_time <- rep(8,7)
 ylim_max <- c(7e6,5e6,4.5e6,4e6,3.5e6,3.5e6,3.5e6)
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 5.53, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 5.53, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -268,7 +268,7 @@ legend <- c(expression("capillary Volt.: "*1*V),
                      expression("capillary Volt.: "*50*V))
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 par(mfrow=c(1,1))
 par(mar=c(3.5,5,2,2))
@@ -297,7 +297,7 @@ name <- c(expression("capillary Volt.: "*1*V),
           expression("capillary Volt.: "*50*V))
 type <- ""
 ylim_max <- c(2.2e6,2.2e6,2.2e6,2.2e6,2.2e6,2.2e6,2.2e6)
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 5.53, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 5.53, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -315,7 +315,7 @@ par(mfrow=c(1,1))
 par(mar=c(3.5,7,2,2))
 
 for(i in 1:7){
-  pdf(paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
+  pdf(paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
       colormodel = "cmyk")  #, #paper = "a4r") 
   par(mar=c(3.5,6,2,2))
   EIC(file[i], time, name=name[i], type, ylim_max=2e6)
@@ -352,7 +352,7 @@ ylab=T
 linesT=c(F,T,T,T,T,T,T)
 
 lineColT=c("#72791C", "#1269B0", "#A8322D","#767171","#C55A11","#83136E","black")
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 for(i in 1:7){
   par(mar=c(3.5,6,2,2))
   file = fileT[i]
@@ -377,7 +377,7 @@ for(i in 1:7){
   lineCol = "black"
   name=legend[i]
   ylim_max=ylim_maxT[i]
-  pdf(  paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
+  pdf(  paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
         width = 7.26, height = 4.26, bg = "white")       
   par(mar=c(3.5,6,2,2))
   par(mfrow=c(1,1))
@@ -407,11 +407,11 @@ name <-   c(expression("cap. Volt.: "*1*V),
               expression("cap. Volt.: "*40*V),
               expression("cap. Volt.: "*50*V))
   
-directory <- setwd("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/ESI tune")
+directory <- setwd("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/ESI tune")
 
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 
 EIC_barplot(main,data,type,directory,name)
 dev.off()
@@ -444,7 +444,7 @@ max_time <- rep(8,5)
 ylim_max <- c(7e6,5e6,4.5e6,4e6,6e6)
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 5.53, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 5.53, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -466,7 +466,7 @@ legend <- c( expression("T: "*0*degree*C),
              expression("T: "*400*degree*C))
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 par(mfrow=c(1,1))
 par(mar=c(3.5,5,2,2))
@@ -491,7 +491,7 @@ name <- c( expression("T: "*0*degree*C),
            expression("T: "*400*degree*C))
 type <- ""
 ylim_max <- c(2.2e6,2.2e6,2.2e6,2.2e6,2.2e6,2.2e6,2.2e6)
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 5.53, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 5.53, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -509,7 +509,7 @@ par(mfrow=c(1,1))
 par(mar=c(3.5,7,2,2))
 
 for(i in 1:5){
-  pdf(paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
+  pdf(paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
       colormodel = "cmyk")  #, #paper = "a4r") 
   par(mar=c(3.5,6,2,2))
   EIC(file[i], time, name=name[i], type, ylim_max=2e6)
@@ -542,7 +542,7 @@ ylab=T
 linesT=c(F,T,T,T,T,T,T)
 
 lineColT=c("#72791C", "#1269B0", "#A8322D","#767171","#C55A11","#83136E","black")
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 for(i in 1:5){
   par(mar=c(3.5,6,2,2))
   file = fileT[i]
@@ -567,7 +567,7 @@ for(i in 1:5){
   lineCol = "black"
   name=legend[i]
   ylim_max=ylim_maxT[i]
-  pdf(  paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
+  pdf(  paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
         width = 7.26, height = 4.26, bg = "white")       
   par(mar=c(3.5,6,2,2))
   par(mfrow=c(1,1))
@@ -593,11 +593,11 @@ name <-   c( expression("T: "*0*degree*C),
              expression("T: "*300*degree*C),
              expression("T: "*400*degree*C))
 
-directory <- setwd("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/ESI tune")
+directory <- setwd("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/ESI tune")
 
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 
 EIC_barplot(main,data,type,directory,name)
 dev.off()
@@ -626,7 +626,7 @@ max_time <- rep(8,4)
 ylim_max <- c(3e6,3e6,3e6,3e6)
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 5.53, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 5.53, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -647,7 +647,7 @@ legend <- c(expression("spray Volt.: "*2*V),
             expression("spray Volt.: "*5*V))
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 par(mfrow=c(1,1))
 par(mar=c(3.5,5,2,2))
@@ -670,7 +670,7 @@ name <- c(expression("spray Volt.: "*2*V),
           expression("spray Volt.: "*5*V))
 type <- ""
 ylim_max <- c(2.2e6,2.2e6,2.2e6,2.2e6,2.2e6,2.2e6,2.2e6)
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 5.53, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 5.53, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -689,7 +689,7 @@ par(mar=c(3.5,7,2,2))
 time=6
 ylim_max<-c(2e6,1.8e6,1.6e6,1.6e6)
 for(i in 1:4){
-  pdf(paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
+  pdf(paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
       colormodel = "cmyk")  #, #paper = "a4r") 
   par(mar=c(3.5,6,2,2))
   EIC(file[i], time, name=name[i], type, ylim_max[i])
@@ -720,7 +720,7 @@ ylab=T
 linesT=c(F,T,T,T,T,T,T)
 
 lineColT=c("#72791C", "#1269B0", "#A8322D","#767171","#C55A11","#83136E","black")
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 for(i in 1:4){
   par(mar=c(3.5,6,2,2))
   file = fileT[i]
@@ -745,7 +745,7 @@ for(i in 1:4){
   lineCol = "black"
   name=legend[i]
   ylim_max=ylim_maxT[i]
-  pdf(  paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
+  pdf(  paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
         width = 7.26, height = 4.26, bg = "white")       
   par(mar=c(3.5,6,2,2))
   par(mfrow=c(1,1))
@@ -769,11 +769,11 @@ name <-   c(expression("spray Volt.: "*2*V),
             expression("spray Volt.: "*4*V),
             expression("spray Volt.: "*5*V))
 
-directory <- setwd("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/ESI tune")
+directory <- setwd("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/ESI tune")
 
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 
 EIC_barplot(main,data,type,directory,name)
 dev.off()
@@ -806,7 +806,7 @@ max_time <- rep(8,5)
 ylim_max <- c(2e6,2.1e6,2.5e6,2.5e6,2e6)
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 5.53, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 5.53, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -828,7 +828,7 @@ legend <- c(expression("tube lens Volt.: "*20*V),
             expression("tube lens Volt.: "*100*V))
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 par(mfrow=c(1,1))
 par(mar=c(3.5,5,2,2))
@@ -853,7 +853,7 @@ name <- c(expression("tube lens Volt.: "*20*V),
           expression("tube lens Volt.: "*100*V))
 type <- ""
 ylim_max <- c(2.2e6,2.2e6,2.2e6,2.2e6,2.2e6,2.2e6,2.2e6)
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 5.53, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 5.53, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -871,7 +871,7 @@ par(mfrow=c(1,1))
 par(mar=c(3.5,7,2,2))
 ylim_max <- c(1.5e6,2e6,2.3e6,2e6,1e6)
 for(i in 1:5){
-  pdf(paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
+  pdf(paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
       colormodel = "cmyk")  #, #paper = "a4r") 
   par(mar=c(3.5,6,2,2))
   EIC(file[i], time, name=name[i], type, ylim_max[i])
@@ -904,7 +904,7 @@ ylab=T
 linesT=c(F,T,T,T,T,T,T)
 
 lineColT=c("#72791C", "#1269B0", "#A8322D","#767171","#C55A11","#83136E","black")
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 for(i in 1:5){
   par(mar=c(3.5,6,2,2))
   file = fileT[i]
@@ -929,7 +929,7 @@ for(i in 1:5){
   lineCol = "black"
   name=legend[i]
   ylim_max=ylim_maxT[i]
-  pdf(  paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
+  pdf(  paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
         width = 7.26, height = 4.26, bg = "white")       
   par(mar=c(3.5,6,2,2))
   par(mfrow=c(1,1))
@@ -955,11 +955,11 @@ name <-   c(expression("Volt.: "*20*V),
             expression("Volt.: "*80*V),
             expression("Volt.: "*100*V))
 
-directory <- setwd("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/ESI tune")
+directory <- setwd("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/ESI tune")
 
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 
 EIC_barplot(main,data,type,directory,name)
 dev.off()
@@ -984,7 +984,7 @@ max_time <- rep(8,12)
 ylim_max <- rep(3e6,12)
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 10, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_SEPERATE.pdf",width = 7.26, height = 10, bg = "white",          
     colormodel = "cmyk",paper = "a4") 
 
 
@@ -1005,7 +1005,7 @@ legend <- c("10-5", "10-20", "10-50",
             "90-5", "90-20", "90-50")
 
 
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/1) TIC/TIC_TOGETHER.pdf",width = 7.26, height = 4.26, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 par(mfrow=c(1,1))
 par(mar=c(3.5,5,2,2))
@@ -1031,7 +1031,7 @@ name <- c("10-5", "10-20", "10-50",
           "90-5", "90-20", "90-50")
 type <- ""
 ylim_max <- rep(3e6,12)
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 10, bg = "white",          
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_together.pdf",width = 7.26, height = 10, bg = "white",          
     colormodel = "cmyk")  #, #paper = "a4r") 
 
 
@@ -1052,7 +1052,7 @@ par(mfrow=c(1,1))
 par(mar=c(3.5,7,2,2))
 ylim_max<-c(rep(2e6,3),rep(2.7e6,3),rep(3.2e6,3),rep(3.2e6,3))
 for(i in 1:12){
-  pdf(paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
+  pdf(paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/2) EIC/EIC_",Temp[i],".pdf"),width = 7.26, height = 4.26, bg = "white",          
       colormodel = "cmyk")  #, #paper = "a4r") 
   par(mar=c(3.5,6,2,2))
   EIC(file[i], time, name=name[i], type, ylim_max[i])
@@ -1085,7 +1085,7 @@ linesT=c(F,T,T,T,T,T,T,T,T,T,T,T)
 
 lineColT=c("#72791C", "#1269B0", "#A8322D","#767171","#C55A11","#83136E","black",
            "#70380f","#96b300","#ff4d4d","#004700","#ddcb40","#470000")
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_together.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 for(i in 1:12){
   par(mar=c(3.5,6,2,2))
   file = fileT[i]
@@ -1113,7 +1113,7 @@ for(i in 1:12){
   lineCol = "black"
   name=legend[i]
   ylim_max=ylim_maxT[i]
-  pdf(  paste0("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
+  pdf(  paste0("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA",Temp[i],".pdf"),
         width = 7.26, height = 4.26, bg = "white")       
   par(mar=c(3.5,6,2,2))
   par(mfrow=c(4,3))
@@ -1123,7 +1123,7 @@ for(i in 1:12){
 }
 
 # iii)
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_matrix.pdf",
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/3) EIC TMA/EIC_TMA_matrix.pdf",
       width = 7.26, height = 10, bg = "white")
 par(mar=c(3.5,6,2,2))
 par(mfrow=c(4,3))
@@ -1148,14 +1148,14 @@ data <- c("gas_10-5.xlsx","gas_10-20.xlsx","gas_10-50.xlsx",
           "gas_60-5.xlsx","gas_60-20.xlsx","gas_60-50.xlsx",
           "gas_90-5.xlsx","gas_60-20.xlsx","gas_60-50.xlsx"
 )
-directory <- setwd("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/ESI tune")
+directory <- setwd("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/ESI tune")
 
 
 name <- c("10-5", "10-20", "10-50",
           "30-5", "30-20", "30-50",
           "60-5", "60-20", "60-50",
           "90-5", "90-20", "90-50")
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/4) Barplot TMA/barplot_CT.pdf",width = 7.26, height = 4.26, bg = "white",colormodel = "cmyk")  
 
 EIC_barplot(main,data,type,directory,name)
 dev.off()
@@ -1189,10 +1189,10 @@ data <- matrix(c("gas_10-5.xlsx","gas_10-20.xlsx","gas_10-50.xlsx",
           "gas_90-5.xlsx","gas_60-20.xlsx","gas_60-50.xlsx"
 ),nrow=4,byrow = T)
 
-# layout isch als ersatz für par(mfrow=c(2,2))
+# layout isch als ersatz fÃ¼r par(mfrow=c(2,2))
 xmin=2
 xmax=6
-pdf("C:/Users/Avrohom Moyal/Downloads/PROJEKT LAURA/PLOTS/5) Sheat gas 4 plot/EIC_MAIN_COOL_PLOT.pdf",width = 7.26, height = 4.26, bg = "white")        
+pdf("C:/Users/Laura Campigotto/Downloads/PROJEKT LAURA/PLOTS/5) Sheat gas 4 plot/EIC_MAIN_COOL_PLOT.pdf",width = 7.26, height = 4.26, bg = "white")        
     
 layout(matrix(c(1,2,3,4,5,5),ncol=2,byrow = T),heights = c(7,7,1.5) )
 
@@ -1210,7 +1210,7 @@ for(i in 1:4){
 
 
 # also falls mer das TMA im graph wegneh will denn muss mer nur im function file
-# linie 259 lösche oder es # vorher lege damit wieder verwende chasch 
+# linie 259 lÃ¶sche oder es # vorher lege damit wieder verwende chasch 
 
 # legende
 par(mar=c(0,0,0,0))
